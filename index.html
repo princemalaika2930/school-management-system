@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Portal - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        .role-btn {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .headmaster-btn { background: #007bff; }
+        .teacher-btn { background: #28a745; }
+        .parent-btn { background: #17a2b8; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>🏫 School Portal</h2>
+        <p>Select your role to login</p>
+        
+        <a href="headmaster.html" class="role-btn headmaster-btn">👨‍💼 Headmaster</a>
+        <a href="teacher.html" class="role-btn teacher-btn">👩‍🏫 Teacher</a>
+        <a href="parent.html" class="role-btn parent-btn">👨‍👩‍👧‍👦 Parent</a>
+        
+        <p style="margin-top: 20px; color: #666;">No password needed for demo</p>
+    </div>
+</body>
+</html>

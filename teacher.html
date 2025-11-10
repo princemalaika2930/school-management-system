@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Complete School System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .portal-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .teacher-header {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .class-selector {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8f9fa;
+            position: sticky;
+            top: 0;
+        }
+        input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+        }
+        .grade-A { background-color: #d4edda; }
+        .grade-B { background-color: #fff3cd; }
+        .grade-C { background-color: #f8d7da; }
+        .grade-D { background-color: #e2e3e5; }
+        .grade-F { background-color: #dc3545; color: white; }
+        .subject-grade {
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 2px 0;
+        }
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="portal-container">
+        <!-- Teacher Header -->
+        <div class="teacher-header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>👩‍🏫 Teacher Portal</h1>
+                    <p><strong>Welcome, Mr. David Asante</strong> | Mathematics & English Teacher</p>
+                </div>
+                <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; border: 1px solid white; border-radius: 5px; text-decoration: none;">
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Teacher Stats -->
+        <div class="stats-cards">
+            <div class="stat-card" style="background: #007bff;">
+                <h3>2</h3>
+                <p>Classes Assigned</p>
+            </div>
+            <div class="stat-card" style="background: #28a745;">
+                <h3>67</h3>
+                <p>Total Students</p>
+            </div>
+            <div class="stat-card" style="background: #ffc107;">
+                <h3>45</h3>
+                <p>Results Entered</p>
+            </div>
+            <div class="stat-card" style="background: #6c757d;">
+                <h3>98%</h3>
+                <p>Attendance Rate</p>
+            </div>
+        </div>
+
+        <!-- Class Selector -->
+        <div class="class-selector">
+            <strong>Select Class & Subject:</strong>
+            <select style="padding: 8px; margin: 0 10px; border-radius: 5px;">
+                <option>Primary 1 - Mathematics (MATH-P1)</option>
+                <option>Primary 2 - English (ENG-P2)</option>
+            </select>
+            <button style="background: #28a745; color: white; padding: 8px 15px; border: none; border-radius: 5px;">
+                Load Class
+            </button>
+        </div>
+
+        <!-- Results Table -->
+        <h3>📊 Enter Student Results</h3>
+        
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Math<br>Score | Grade</th>
+                        <th>English<br>Score | Grade</th>
+                        <th>Science<br>Score | Grade</th>
+                        <th>Social<br>Score | Grade</th>
+                        <th>Total</th>
+                        <th>Average</th>
+                        <th>Overall</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kwame Mensah</td>
+                        
+                        <!-- Math -->
+                        <td>
+                            <input type="number" value="85" min="0" max="100" onchange="updateAllGrades(0)">
+                            <div class="subject-grade grade-A">A</div>
+                        </td>
+                        
+                        <!-- English -->
+                        <td>
+                            <input type="number" value="78" min="0" max="100" onchange="updateAllGrades(0)">
+                            <div class="subject-grade grade-B">B</div>
+                        </td>
+                        
+                        <!-- Science -->
+                        <td>
+                            <input type="number" value="82" min="0" max="100" onchange="updateAllGrades(0)">
+                            <div class="subject-grade grade-B">B</div>
+                        </td>
+                        
+                        <!-- Social Studies -->
+                        <td>
+                            <input type="number" value="80" min="0" max="100" onchange="updateAllGrades(0)">
+                            <div class="subject-grade grade-B">B</div>
+                        </td>
+                        
+                        <td><strong>325</strong></td>
+                        <td><strong>81.3%</strong></td>
+                        <td><div class="subject-grade grade-B">B</div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Abena Ofori</td>
+                        
+                        <!-- Math -->
+                        <td>
+                            <input type="number" value="92" min="0" max="100" onchange="updateAllGrades(1)">
+                            <div class="subject-grade grade-A">A</div>
+                        </td>
+                        
+                        <!-- English -->
+                        <td>
+                            <input type="number" value="88" min="0" max="100" onchange="updateAllGrades(1)">
+                            <div class="subject-grade grade-A">A</div>
+                        </td>
+                        
+                        <!-- Science -->
+                        <td>
+                            <input type="number" value="90" min="0" max="100" onchange="updateAllGrades(1)">
+                            <div class="subject-grade grade-A">A</div>
+                        </td>
+                        
+                        <!-- Social Studies -->
+                        <td>
+                            <input type="number" value="85" min="0" max="100" onchange="updateAllGrades(1)">
+                            <div class="subject-grade grade-A">A</div>
+                        </td>
+                        
+                        <td><strong>355</strong></td>
+                        <td><strong>88.8%</strong></td>
+                        <td><div class="subject-grade grade-A">A</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="margin: 20px 0; text-align: center;">
+            <button style="background: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 5px; margin: 5px; font-size: 16px;">
+                💾 Save All Results
+            </button>
+            <button style="background: #17a2b8; color: white; padding: 12px 25px; border: none; border-radius: 5px; margin: 5px; font-size: 16px;">
+                📤 Publish to Parents
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function calculateGrade(score) {
+            if (score >= 80) return { grade: 'A', class: 'grade-A' };
+            if (score >= 70) return { grade: 'B', class: 'grade-B' };
+            if (score >= 60) return { grade: 'C', class: 'grade-C' };
+            if (score >= 50) return { grade: 'D', class: 'grade-D' };
+            return { grade: 'F', class: 'grade-F' };
+        }
+
+        function updateAllGrades(studentIndex) {
+            const row = document.querySelectorAll('tr')[studentIndex + 1];
+            const inputs = row.querySelectorAll('input');
+            
+            let total = 0;
+            let subjectCount = 0;
+            
+            // Update each subject and calculate total
+            for (let i = 0; i < inputs.length; i++) {
+                const score = parseInt(inputs[i].value) || 0;
+                total += score;
+                subjectCount++;
+                
+                // Update grade display (next element after input)
+                const gradeCell = inputs[i].nextElementSibling;
+                const gradeInfo = calculateGrade(score);
+                gradeCell.textContent = gradeInfo.grade;
+                gradeCell.className = 'subject-grade ' + gradeInfo.class;
+            }
+            
+            // Update totals
+            const average = total / subjectCount;
+            const overallGrade = calculateGrade(average);
+            
+            const totalCell = row.cells[row.cells.length - 3];
+            const averageCell = row.cells[row.cells.length - 2];
+            const overallCell = row.cells[row.cells.length - 1];
+            
+            totalCell.innerHTML = `<strong>${total}</strong>`;
+            averageCell.innerHTML = `<strong>${average.toFixed(1)}%</strong>`;
+            overallCell.innerHTML = `<div class="subject-grade ${overallGrade.class}">${overallGrade.grade}</div>`;
+        }
+
+        // Initialize grades
+        document.addEventListener('DOMContentLoaded', function() {
+            updateAllGrades(0);
+            updateAllGrades(1);
+        });
+    </script>
+</body>
+</html>
